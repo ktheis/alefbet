@@ -578,6 +578,11 @@ body {
   position: relative;
 }
 
+.siddur-word-card.stealth-word-card {
+  padding: 0.65rem 1.05rem;
+  justify-content: center;
+}
+
 .siddur-word-card:hover {
   transform: translateY(-2px);
   border-color: #94a3b8;
@@ -1308,4 +1313,220 @@ body {
   font-weight: 600;
   color: var(--text-muted);
   margin: 0 0.25rem;
+}
+
+/* =========================================================================
+   5th Tab: Custom Hebrew Text Input & Two Activities
+   ========================================================================= */
+
+.custom-preset-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.preset-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.custom-textarea-wrap {
+  margin-top: 0.65rem;
+}
+
+.custom-hebrew-textarea {
+  width: 100%;
+  font-family: var(--font-hebrew);
+  font-size: 1.85rem;
+  line-height: 1.45;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  border: 2px solid var(--border-strong);
+  background: var(--bg-siddur);
+  color: var(--text-main);
+  resize: vertical;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.custom-hebrew-textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.12);
+}
+
+.custom-input-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.custom-stats-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
+}
+
+.custom-stat-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.custom-stat-pill {
+  font-size: 0.84rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.custom-stat-pill.pill-sys-available {
+  background: #ecfdf5;
+  border-color: #6ee7b7;
+  color: #065f46;
+}
+
+.custom-stat-pill.pill-sys-zero {
+  background: #fff1f2;
+  border-color: #fda4af;
+  color: #9f1239;
+}
+
+.custom-stat-pill.pill-new-words {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+
+.custom-activities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 780px) {
+  .custom-activities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.custom-activity-card {
+  background: var(--bg-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.custom-activity-card:hover:not(.activity-disabled) {
+  border-color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.custom-activity-card.active {
+  border-color: var(--accent-primary);
+  background: #f8fafc;
+  box-shadow: 0 4px 14px rgba(30, 58, 138, 0.1);
+}
+
+.custom-activity-card.activity-disabled {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  cursor: not-allowed;
+  opacity: 0.78;
+}
+
+.activity-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.activity-num-badge {
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent-primary);
+  background: #dbeafe;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+}
+
+.activity-disabled .activity-num-badge {
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+.activity-avail-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.tag-available {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.tag-unavailable {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+.activity-card-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.activity-card-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.word-origin-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+}
+
+.origin-system {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+.origin-new {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.custom-empty-state {
+  text-align: center;
+  padding: 2rem 1.5rem;
 }
